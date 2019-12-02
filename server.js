@@ -24,5 +24,4 @@ server.get("/", (req, res) => {
     res.send(`<h1>Welcome to the Job Tracker Application!</h1>`);
 });
 
-
 module.exports = server;
