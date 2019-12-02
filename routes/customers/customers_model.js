@@ -32,15 +32,15 @@ const addCustomer = customer => {
 
 
 //update customer
+const updateCustomerById = (id, customer) => {
+    return db('customers').where({id}).update(customer);
+};
 
 //delete customer
 
 const deleteCustomer = id => {
     return db('customers').where({id}).del();
-}
-
-
-
+};
 
 
 
@@ -49,5 +49,6 @@ module.exports = {
     getCustomersInvoicesById,
     getCustomerJobsById,
     addCustomer,
-    deleteCustomer
+    deleteCustomer,
+    updateCustomerById
 };

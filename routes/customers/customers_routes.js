@@ -55,7 +55,22 @@ router.post('/addCustomer', async (req, res) => {
     }
 });
 
+
 //Put
+
+router.put('/updateCustomer/:id', async (req, res) => {
+    const { id } = req.params;
+    const updateData = req.body;
+
+    try{
+        const customer = await db.updateCustomerById(id, updateData);
+
+        res.status(200).json(customer);
+    }
+    catch({message}){
+        res.status(500).json(message);
+    }
+});
 
 
 //Delete
